@@ -1,0 +1,54 @@
+# Node.js (para frontend y backend)
+node_modules/
+dist/
+build/
+.env
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Docker
+docker-compose.override.yml
+*.env
+
+# Editor config
+.vscode/
+.idea/
+
+# Archivos temporales o de OS
+*.swp
+*~
+
+# Carpetas de base de datos o compilados (ajustar según tu proyecto)
+db/*.sqlite
+db/*.db
+
+# Ignorar compilados o paquetes específicos del backend o frontend
+frontend/build/
+backend/build/
+
+# Archivos de locks de paquete (opcional, si quieres no subirlos)
+package-lock.json
+yarn.lock
+
+# Archivos específicos de herramientas (ejemplo draw.io)
+*.drawio
+
+# Otros archivos temporales o personales
+*.tmp
+*.bak
+*.backup
+
+# Ignorar archivos de logs
+logs/
+*.log
+
+# Ignorar archivos de pruebas temporales (opcional)
+*.test.js
+*.spec.js
+
