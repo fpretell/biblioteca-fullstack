@@ -12,7 +12,6 @@ export class AllExceptionsFilter implements ExceptionFilter {
     const status = exception.getStatus();
     const exceptionResponse = exception.getResponse();
 
-    // Opcional: Extraer mensajes legibles de errores de validación
     let validationErrors = null;
     if (
       typeof exceptionResponse === 'object' &&
