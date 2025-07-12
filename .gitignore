@@ -32,6 +32,9 @@ db/*.db
 frontend/build/
 backend/build/
 
+# Ignore node_modules everywhere
+node_modules/
+
 # Archivos de locks de paquete (opcional, si quieres no subirlos)
 package-lock.json
 yarn.lock
