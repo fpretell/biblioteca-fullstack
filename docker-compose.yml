@@ -33,7 +33,6 @@ services:
       DB_PASSWORD: libros_pass
       DB_NAME: cmpc_libros
       CHOKIDAR_USEPOLLING: "true"
-    command: ["npm", "run", "start:dev"]
 
   frontend:
     build:
