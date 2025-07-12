@@ -10,6 +10,8 @@ WORKDIR /app
 # Crea carpeta para imágenes subidas
 RUN mkdir -p /app/uploads
 
+RUN npm install -g @nestjs/cli
+
 # Copia los archivos de dependencias
 COPY package*.json ./
 
