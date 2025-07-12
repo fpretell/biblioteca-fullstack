@@ -43,6 +43,7 @@ COPY package*.json ./
 
 # Instalamos dependencias (incluye nest local)
 RUN npm install
+RUN npm install --save-dev @types/node @types/express
 
 COPY . .
 

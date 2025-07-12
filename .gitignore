@@ -38,9 +38,6 @@ db/*.db
 docker-compose.override.yml
 *.env
 
-# Package lock files (opcional: no subir si quieres)
-/package-lock.json
-/yarn.lock
 
 # Otros archivos temporales o backups
 *.tmp
