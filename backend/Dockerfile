@@ -10,6 +10,8 @@ WORKDIR /usr/src/app
 # Copia primero package.json y lockfile
 COPY package*.json ./
 
+COPY .env .env
+
 # Instala dependencias (incluye los tipos porque ya están en devDependencies)
 RUN npm install
 
