@@ -26,6 +26,7 @@ services:
     volumes:
       - ./backend:/usr/src/app
       - ./backend/uploads:/usr/src/app/uploads
+      - ./backend/.env:/usr/src/app/.env
     environment:
       DB_HOST: db
       DB_PORT: 5432
