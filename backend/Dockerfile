@@ -1,27 +1,29 @@
+# Usa una imagen liviana de Node con Alpine
 FROM node:20-alpine
 
-# Instalar dependencias necesarias para nodemon, chokidar y herramientas básicas
+# Instala herramientas necesarias
 RUN apk add --no-cache bash git libc6-compat
 
+# Establece el directorio de trabajo
 WORKDIR /app
 
-# Crear carpeta para subir archivos
+# Crea carpeta para imágenes subidas
 RUN mkdir -p /app/uploads
 
-# Copiar los package.json
+# Copia los archivos de dependencias
 COPY package*.json ./
 
-# Instalar NestJS CLI globalmente (para que funcione 'nest start')
-RUN npm install -g @nestjs/cli
-
-# Instalar dependencias del proyecto
+# Instala las dependencias (incluye devs como @types/node)
 RUN npm install
 
-# Copiar el resto del código
+# Copia el resto del proyecto
 COPY . .
 
-# Exponer el puerto (opcional si no está en docker-compose)
+# Compila el proyecto NestJS (usa tu script "build": "nest build")
+RUN npm run build
+
+# Expone el puerto
 EXPOSE 3000
 
-# Usar el Nest CLI en modo desarrollo con watch
-CMD ["npm", "run", "start:dev"]
+# Corre el backend compilado
+CMD ["npm", "run", "start:prod"]
