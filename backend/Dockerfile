@@ -1,58 +1,23 @@
-# # Usa una imagen liviana de Node con Alpine
-# FROM node:20-alpine
-
-# # Instala herramientas necesarias
-# RUN apk add --no-cache bash git libc6-compat
-
-# # Establece el directorio de trabajo
-# WORKDIR /app
-
-# # Crea carpeta para imágenes subidas
-# RUN mkdir -p /app/uploads
-
-# RUN npm install -g @nestjs/cli
-
-# # Copia los archivos de dependencias
-# COPY package*.json ./
-
-# # Instala las dependencias (incluye devs como @types/node)
-# RUN npm install
-
-# # Copia el resto del proyecto
-# COPY . .
-
-# # Compila el proyecto NestJS (usa tu script "build": "nest build")
-# RUN npm run build
-
-# # Expone el puerto
-# EXPOSE 3000
-
-# # Corre el backend compilado
-# # CMD ["npm", "run", "start:prod"]
-# CMD ["nest", "start", "--watch"]
-# # CMD ["npx", "nest", "start", "--watch"]
+# Usa imagen base oficial de Node
 FROM node:20-alpine
 
-# Instalar utilidades necesarias
+# Instala bash y git
 RUN apk add --no-cache bash git
 
-# Crear directorio de trabajo
+# Establece el directorio de trabajo
 WORKDIR /usr/src/app
 
-# Copiar package.json y lock
+# Copia primero package.json y lockfile
 COPY package*.json ./
 
-# Instalar Nest CLI global
-RUN npm install -g @nestjs/cli
-
-# Instalar dependencias del proyecto
+# Instala dependencias (incluye los tipos porque ya están en devDependencies)
 RUN npm install
 
-# Copiar el resto del código
+# Copia el resto del código fuente
 COPY . .
 
-# Exponer el puerto de la API
+# Expone el puerto Nest
 EXPOSE 3000
 
-# Comando de inicio
+# Ejecuta Nest en modo desarrollo (watch)
 CMD ["npm", "run", "start:dev"]

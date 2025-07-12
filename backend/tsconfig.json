@@ -2,7 +2,7 @@
   "compilerOptions": {
     "module": "commonjs",
     "declaration": true,
-    "types": ["node", "express"],
+    // "types": ["node", "express"],
     "typeRoots": ["node_modules/@types"],
     "removeComments": true,
     "emitDecoratorMetadata": true,
