@@ -2,10 +2,9 @@ import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
-import { AllExceptionsFilter } from 'common/filters/all-exceptions.filter';
+import { AllExceptionsFilter } from './common/filters/all-exceptions.filter';
 import * as express from 'express';
 import { NestExpressApplication } from '@nestjs/platform-express'; // <-- Importante
-import { join } from 'path';
 import * as path from 'path';
 
 async function bootstrap() {
