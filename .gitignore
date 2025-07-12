@@ -1,73 +1,56 @@
-# Node.js (para frontend y backend)
-node_modules/
+# Node.js dependencies
+/node_modules/
+frontend/node_modules/
+backend/node_modules/
+
+# Build output
+/dist/
+/build/
+frontend/build/
+backend/build/
 dist/
 build/
+
+# Environment variables
 .env
+
+# Logs
 *.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+logs/
 
-# Node modules
-**/node_modules
-# Output compilado
-**/dist
-# Archivos temporales
-**/*.log
-
-
-# Ignorar node_modules de frontend y backend
-/frontend/node_modules
-/backend/node_modules
-
-# Archivos de sistema
+# OS generated files
 .DS_Store
 Thumbs.db
 
-# Docker
-docker-compose.override.yml
-*.env
-
-# Editor config
+# Editor folders
 .vscode/
 .idea/
 
-# Archivos temporales o de OS
+# Temporary files
 *.swp
 *~
 
-# Carpetas de base de datos o compilados (ajustar según tu proyecto)
+# Database files (ajusta si usas base de datos local)
 db/*.sqlite
 db/*.db
 
-# Ignorar compilados o paquetes específicos del backend o frontend
-frontend/build/
-backend/build/
+# Docker overrides and env
+docker-compose.override.yml
+*.env
 
-# Ignore node_modules everywhere
-node_modules/
-
-/package.json
+# Package lock files (opcional: no subir si quieres)
 /package-lock.json
+/yarn.lock
 
-
-# Archivos de locks de paquete (opcional, si quieres no subirlos)
-package-lock.json
-yarn.lock
-
-# Archivos específicos de herramientas (ejemplo draw.io)
-*.drawio
-
-# Otros archivos temporales o personales
+# Otros archivos temporales o backups
 *.tmp
 *.bak
 *.backup
 
-# Ignorar archivos de logs
-logs/
-*.log
-
-# Ignorar archivos de pruebas temporales (opcional)
+# Archivos de pruebas temporales (opcional)
 *.test.js
 *.spec.js
+
+# Archivos específicos de herramientas (ejemplo draw.io)
+*.drawio
 

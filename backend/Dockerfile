@@ -29,5 +29,6 @@ EXPOSE 3000
 
 # Corre el backend compilado
 # CMD ["npm", "run", "start:prod"]
-CMD ["npx", "nest", "start", "--watch"]
+CMD ["nest", "start", "--watch"]
+# CMD ["npx", "nest", "start", "--watch"]
 
