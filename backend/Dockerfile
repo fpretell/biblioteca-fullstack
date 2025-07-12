@@ -26,4 +26,6 @@ RUN npm run build
 EXPOSE 3000
 
 # Corre el backend compilado
-CMD ["npm", "run", "start:prod"]
+# CMD ["npm", "run", "start:prod"]
+CMD ["npx", "nest", "start", "--watch"]
+
