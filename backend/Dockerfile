@@ -31,21 +31,28 @@
 # # CMD ["npm", "run", "start:prod"]
 # CMD ["nest", "start", "--watch"]
 # # CMD ["npx", "nest", "start", "--watch"]
-
 FROM node:20-alpine
 
-# Dependencias necesarias para chokidar y herramientas básicas
-RUN apk add --no-cache bash git libc6-compat
+# Instalar utilidades necesarias
+RUN apk add --no-cache bash git
 
+# Crear directorio de trabajo
 WORKDIR /usr/src/app
 
+# Copiar package.json y lock
 COPY package*.json ./
 
-# Instalamos dependencias (incluye nest local)
-RUN npm install
-RUN npm install --save-dev @types/node @types/express
+# Instalar Nest CLI global
+RUN npm install -g @nestjs/cli
 
+# Instalar dependencias del proyecto
+RUN npm install
+
+# Copiar el resto del código
 COPY . .
 
-# Usar el ejecutable local de nest vía npx
-CMD ["npx", "nest", "start", "--watch"]
+# Exponer el puerto de la API
+EXPOSE 3000
+
+# Comando de inicio
+CMD ["npm", "run", "start:dev"]
