@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2025-07-09T08:28:00.000Z" agent="Mozilla/5.0" etag="gK5fC9bX2Y7pQ1rZ0uHj" version="24.6.4" type="device">
+  <diagram id="diagram_architecture" name="Page-1">
+    <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="2" value="Usuario" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="100" y="300" width="30" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="3" value="Frontend (React + TypeScript)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f9f;strokeColor=#333;" vertex="1" parent="1">
+          <mxGeometry x="200" y="270" width="160" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="4" value="Backend (NestJS + TypeScript)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ccf;strokeColor=#333;" vertex="1" parent="1">
+          <mxGeometry x="450" y="270" width="180" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="5" value="Base de Datos (PostgreSQL)" style="shape=cylinder;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#cfc;strokeColor=#333;" vertex="1" parent="1">
+          <mxGeometry x="700" y="270" width="80" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="6" value="Sistema de Logging / Exportación CSV" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffc;strokeColor=#333;" vertex="1" parent="1">
+          <mxGeometry x="450" y="450" width="180" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="7" value="Desarrollador" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="100" y="650" width="30" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="8" value="Docker Compose" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=20;fillColor=#fcc;strokeColor=#333;" vertex="1" parent="1">
+          <mxGeometry x="250" y="650" width="100" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="9" value="Accede a través de" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="2" target="3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="150" y="330" as="sourcePoint" />
+            <mxPoint x="200" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="10" value="Solicita datos y operaciones a" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="3" target="4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="330" as="sourcePoint" />
+            <mxPoint x="450" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="11" value="Interactúa con" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="4" target="5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="630" y="330" as="sourcePoint" />
+            <mxPoint x="700" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="12" value="Genera logs y exporta datos" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="4" target="6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="540" y="370" as="sourcePoint" />
+            <mxPoint x="540" y="450" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="540" y="410" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="13" value="Despliega con" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="7" target="8">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="130" y="680" as="sourcePoint" />
+            <mxPoint x="250" y="680" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="14" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="8" target="3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="650" as="sourcePoint" />
+            <mxPoint x="300" y="370" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="300" y="550" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="15" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="8" target="4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="650" as="sourcePoint" />
+            <mxPoint x="540" y="370" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="300" y="550" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="16" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="8" target="5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="650" as="sourcePoint" />
+            <mxPoint x="740" y="370" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="300" y="550" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="17" value="Autenticación" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.25;endArrow=classic;endFill=1;" parent="1" source="3" target="4" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="360" y="295" />
+              <mxPoint x="430" y="295" />
+              <mxPoint x="430" y="295" />
+              <mxPoint x="450" y="295" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="18" value="Listado de Libros" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;endArrow=classic;endFill=1;" parent="1" source="3" target="4" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="360" y="330" />
+              <mxPoint x="430" y="330" />
+              <mxPoint x="430" y="330" />
+              <mxPoint x="450" y="330" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="19" value="Formulario Alta/Edición" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.75;endArrow=classic;endFill=1;" parent="1" source="3" target="4" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="360" y="365" />
+              <mxPoint x="430" y="365" />
+              <mxPoint x="430" y="365" />
+              <mxPoint x="450" y="365" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="20" value="CRUD Libros" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;endArrow=classic;endFill=1;" parent="1" source="4" target="5" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="630" y="330" />
+              <mxPoint x="680" y="330" />
+              <mxPoint x="680" y="330" />
+              <mxPoint x="700" y="330" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="21" value="Logging Auditoría" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;endArrow=classic;endFill=1;" parent="1" source="4" target="6" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="540" y="370" />
+              <mxPoint x="540" y="450" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="22" value="Exportación CSV" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.75;exitY=1;entryX=0.75;entryY=0;endArrow=classic;endFill=1;" parent="1" source="4" target="6" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="585" y="370" />
+              <mxPoint x="585" y="450" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="23" value="&lt;b&gt;Frontend&lt;/b&gt;" style="html=1;dashed=1;verticalAlign=top;labelBackgroundColor=none;fontSize=14;" vertex="1" parent="1">
+            <mxGeometry x="190" y="240" width="180" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="24" value="&lt;b&gt;Backend&lt;/b&gt;" style="html=1;dashed=1;verticalAlign=top;labelBackgroundColor=none;fontSize=14;" vertex="1" parent="1">
+            <mxGeometry x="440" y="240" width="200" height="180" as="geometry"/>
+        </mxCell>
+        <mxCell id="25" value="&lt;b&gt;Base de Datos&lt;/b&gt;" style="html=1;dashed=1;verticalAlign=top;labelBackgroundColor=none;fontSize=14;" vertex="1" parent="1">
+            <mxGeometry x="690" y="240" width="100" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="26" value="&lt;b&gt;DevOps&lt;/b&gt;" style="html=1;dashed=1;verticalAlign=top;labelBackgroundColor=none;fontSize=14;" vertex="1" parent="1">
+            <mxGeometry x="240" y="620" width="120" height="150" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
